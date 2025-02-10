@@ -1,0 +1,75 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Resume from "./pages/Resume";
+import Contact from "./pages/Contact";
+
+function App() {
+  return (
+    <Router>
+      <div className="bg-gray-100 min-h-screen">
+        <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
+          <h1 className="text-xl font-bold">Sharleen Liz - Data Scientist</h1>
+          <div className="space-x-4">
+            <Link to="/" className="hover:underline">Home</Link>
+            <Link to="/about" className="hover:underline">About</Link>
+            <Link to="/projects" className="hover:underline">Projects</Link>
+            <Link to="/resume" className="hover:underline">Resume</Link>
+            <Link to="/contact" className="hover:underline">Contact</Link>
+          </div>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <section className="p-6">
+          <h2 className="text-2xl font-bold text-center">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div className="p-4 bg-white shadow-md rounded-lg">
+              <h3 className="text-xl font-semibold">Syriatel Customer Churn</h3>
+              <p>Analyzed customer behavior to predict churn using machine learning models.</p>
+              <a href="https://github.com/SharleentheCEO/Phase3_project" className="text-blue-500 hover:underline">View Project</a>
+            </div>
+            <div className="p-4 bg-white shadow-md rounded-lg">
+              <h3 className="text-xl font-semibold">Aircraft Safety Analysis</h3>
+              <p>Investigated aviation incidents to identify safety trends and recommendations.</p>
+              <a href="https://github.com/SharleentheCEO" className="text-blue-500 hover:underline">View Project</a>
+            </div>
+            <div className="p-4 bg-white shadow-md rounded-lg">
+              <h3 className="text-xl font-semibold">New Movie Studio Insights</h3>
+              <p>Performed data-driven analysis to guide investment decisions in the film industry.</p>
+              <a href="https://github.com/SharleentheCEO" className="text-blue-500 hover:underline">View Project</a>
+            </div>
+            <div className="p-4 bg-white shadow-md rounded-lg">
+              <h3 className="text-xl font-semibold">Movie Recommendation System</h3>
+              <p>Built a recommendation model to suggest movies based on user preferences.</p>
+              <a href="https://github.com/SharleentheCEO/Phase3_project/tree/master" className="text-blue-500 hover:underline">View Project</a>
+            </div>
+          </div>
+        </section>
+        <footer className="text-center p-4 bg-blue-600 text-white mt-10">
+          <p>&copy; 2025 Sharleen Liz | Data Scientist</p>
+          <div className="flex justify-center space-x-4 mt-2">
+            <a href="https://github.com/SharleentheCEO" target="_blank" rel="noopener noreferrer">
+              <FaGithub size={24} />
+            </a>
+            <a href="https://www.linkedin.com/in/sharleen-liz-4a4717319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin size={24} />
+            </a>
+            <a href="mailto:lizsharleen381@gmail.com">
+              <FaEnvelope size={24} />
+            </a>
+          </div>
+        </footer>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
